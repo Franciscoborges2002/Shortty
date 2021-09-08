@@ -6,6 +6,7 @@ var CreateSlugController = require('./Controllers/CreateSlugController');
 
 const createSlugController = new CreateSlugController();
 
+
 router.post('/createSlug', createSlugController.handle);
 
 module.exports = router;

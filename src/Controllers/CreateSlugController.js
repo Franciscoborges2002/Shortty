@@ -9,7 +9,7 @@ class CreateSlugController{
         const createSlugService = new CreateSlugService();
         const slug = await createSlugService.execute(url);
 
-        console.log("slug: " + slug);
+        console.log("slug to retreive: " + slug);
 
         return res.json(slug);
     }
