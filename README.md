@@ -21,6 +21,7 @@ To make this wonderful application i used:
 - [Node.js](https://nodejs.org/en/)
 - [Express](https://expressjs.com)
 - [Nodemon](https://www.npmjs.com/package/nodemon)
+- [Mongoose](https://mongoosejs.com/)
 
 ## :memo: License
 
