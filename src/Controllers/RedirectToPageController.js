@@ -1,4 +1,7 @@
-const slugSchema = require("../Schemas/slugSchema")
+const slugSchema = require("../Schemas/slugSchema");
+const AddViewsToPageService = require("../Services/AddViewsToPageService");
+
+const addViewsToPageService = new AddViewsToPageService();
 
 class RedirectToPageController{
     async handle(req, res){
@@ -7,6 +10,7 @@ class RedirectToPageController{
             const slug = await slugSchema.findOne({ slug: req.params.code })
 
             if(slug){
+                addViewsToPageService.execute(slug.slug);
                 res.redirect(slug.url)
             }else {
                 res.status(404).json({errorMessage: 'No such shortty'})

@@ -1,4 +1,4 @@
-const slug = require('../Schemas/slugSchema')//Compile into a model
+const slugSchema = require('../Schemas/slugSchema')//Compile into a model
 
 class CreateSlugService{
     async execute(url, slugReceived){
@@ -9,25 +9,23 @@ class CreateSlugService{
             createdSlug = slugReceived;
         }
 
-        console.log(createdSlug)
-
         try{
             //var createdSlug = await createSlug(6);
             //1>Check if the url already is in the db
-            const _url = await slug.findOne({ url });
+            const _url = await slugSchema.findOne({ url });
             if(_url){
                 return _url.slug
             }
 
             //2> Verify if there is some slug identical in db.
-            var _slug = await slug.findOne({ slug: createdSlug })
+            var _slug = await slugSchema.findOne({ slug: createdSlug })
 
             //If there is the slug inside the db
             if(_slug){
                 //Enter in a while loop, so if the other slug generated is not duplicates as well.
                 do{
                     var createdSlug = createSlug(6);
-                    _slug = await slug.findOne({ slug: createdSlug })
+                    _slug = await slugSchema.findOne({ slug: createdSlug })
                 } while(_slug)
 
                 return createdSlug; 
@@ -35,7 +33,7 @@ class CreateSlugService{
 
             //3> If passes all the validations, save to the database
             //Creating the object
-            var newUrl = new slug ({
+            var newUrl = new slugSchema({
                 url: url,
                 slug: createdSlug
             })

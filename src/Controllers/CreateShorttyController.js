@@ -1,5 +1,7 @@
 var CreateShorttyService = require('../Services/CreateShorttyService');
 
+const createShorttyService = new CreateShorttyService();
+
 
 class CreateSlugController{
     async handle(req, res){
@@ -12,8 +14,7 @@ class CreateSlugController{
             return res.json({error: "There is an erro in the url"})
         }
 
-        try{
-            const createShorttyService = new CreateShorttyService();
+        try{        
             const slug = await createShorttyService.execute(url, slugReceived);
 
             console.log("slug to retreive: " + slug);

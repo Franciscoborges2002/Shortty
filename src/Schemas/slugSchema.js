@@ -9,7 +9,7 @@ const slugSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    clicks: {
+    views: {
         type: Number,
         required: true,
         default: 0
