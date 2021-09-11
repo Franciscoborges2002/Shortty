@@ -1,4 +1,4 @@
-var CreateSlugService = require('../Services/CreateSlugService');
+var CreateShorttyService = require('../Services/CreateShorttyService');
 
 
 class CreateSlugController{
@@ -12,15 +12,15 @@ class CreateSlugController{
         }
 
         try{
-            const createSlugService = new CreateSlugService();
-            const slug = await createSlugService.execute(url);
+            const createShorttyService = new CreateShorttyService();
+            const slug = await createShorttyService.execute(url);
+
+            console.log("slug to retreive: " + slug);
+
+            return res.json(`localhost:5555/${slug}`);
         }catch(err){
             res.status(500).json({error: "An error occured in the server. " + err});
         }
-
-        console.log("slug to retreive: " + slug);
-
-        return res.json(`localhost:5555/${slug}`);
     }
 }
 

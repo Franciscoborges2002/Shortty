@@ -3,7 +3,7 @@ const slug = require('../Schemas/slugSchema')//Compile into a model
 class CreateSlugService{
     async execute(url){
         //var createdSlug = await createSlug(6);
-        var createdSlug = 'oasD23';
+        var createdSlug = createSlug(6);
 
         try{
             //var createdSlug = await createSlug(6);
@@ -13,32 +13,34 @@ class CreateSlugService{
                 return _url.slug
             }
 
-            //2> Verify if there is some slug identical in db
-            var _slug = await slug.findOne({ createdSlug })
-            console.log(_slug)
-            do{
-                var createdSlug = createSlug(6);
-                _slug = await slug.findOne({ createdSlug })
-            } while(_slug)
+            //2> Verify if there is some slug identical in db.
+            var _slug = await slug.findOne({ slug: createdSlug })
 
-            return createdSlug;
+            //If there is the slug inside the db
+            if(_slug){
+                //Enter in a while loop, so if the other slug generated is not duplicates as well.
+                do{
+                    var createdSlug = createSlug(6);
+                    _slug = await slug.findOne({ slug: createdSlug })
+                } while(_slug)
 
-            /*while(await findOneBySlug(createdSlug).catch(function(err){console.log(err)}) == false){
-                console.log("oioi")
-                return "olaaa"
+                return createdSlug; 
             }
 
             //3> If passes all the validations, save to the database
+            //Creating the object
             var newUrl = new slug ({
                 url: url,
                 slug: createdSlug
             })
 
+            //Saving in db
             newUrl.save(function(err, slug){
                 if(err) return console.log(err)
                 console.log(slug.url + " saved to database")
-            })*/
+            })
 
+            //return the slug
             return createdSlug;
         }catch(err){
             console.log('[CREATING SHORTTY ERROR]: ' + err);
