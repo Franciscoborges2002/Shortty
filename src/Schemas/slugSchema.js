@@ -1,9 +1,19 @@
 const mongoose = require('mongoose')
 
 const slugSchema = new mongoose.Schema({
-    url: String,
-    slug: String,
-    clicks: Number
+    url: {
+        type: String,
+        required: true
+    },
+    slug: {
+        type: String,
+        required: true
+    },
+    clicks: {
+        type: Number,
+        required: true,
+        default: 0
+    },
 })
 
-module.exports = {slugSchema}
+module.exports = mongoose.model('Slug', slugSchema)

@@ -2,11 +2,15 @@ var express = require("express");
 
 var router = express.Router();
 
-var CreateSlugController = require('./Controllers/CreateSlugController');
+var CreateShorttyController = require('./Controllers/CreateShorttyController');
+var RedirectToPageController = require('./Controllers/RedirectToPageController')
 
-const createSlugController = new CreateSlugController();
+const createShorttyController = new CreateShorttyController();
+const redirectToPageController = new RedirectToPageController();
 
 
-router.post('/createSlug', createSlugController.handle);
+router.post('/createShortty', createShorttyController.handle);
+
+router.get('/:code', redirectToPageController.handle)
 
 module.exports = router;
