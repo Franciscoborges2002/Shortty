@@ -1,13 +1,19 @@
 const slug = require('../Schemas/slugSchema')//Compile into a model
 
 class CreateSlugService{
-    async execute(url){
+    async execute(url, slugReceived){
         //var createdSlug = await createSlug(6);
+        if(slugReceived === ""){
         var createdSlug = createSlug(6);
+        } else {
+            createdSlug = slugReceived;
+        }
+
+        console.log(createdSlug)
 
         try{
             //var createdSlug = await createSlug(6);
-            //1>
+            //1>Check if the url already is in the db
             const _url = await slug.findOne({ url });
             if(_url){
                 return _url.slug
@@ -60,31 +66,6 @@ function createSlug(length){
     } 
 
     return res;
-}
-
-async function findOneByUrl(url2Test){
-    const query = slug.where({url : `${url2Test}`})
-    await query.findOne((err, url) =>{
-        if(err) return console.log(err)
-        if(url == null){
-            return false
-        }else {
-            return slug
-        }
-    })
-}
-
-async function findOneBySlug(slug2Test){
-    const query = slug.where({slug : `${slug2Test}`})
-    await query.findOne((err, slug) =>{
-        if(err) return console.log(err)
-        if(slug){
-            console.log("There is one slug identical: " + slug.slug)
-            return true;
-        }else{
-            return false
-        }
-    })
 }
 
 module.exports = CreateSlugService;

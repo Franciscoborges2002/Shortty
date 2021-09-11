@@ -4,6 +4,7 @@ var CreateShorttyService = require('../Services/CreateShorttyService');
 class CreateSlugController{
     async handle(req, res){
         var url = req.body.url
+        var slugReceived = req.body.slug
         if(url.startsWith("https://") || url.startsWith("http://") || url.startsWith("www.")){
             console.log("URL validation: passed")
         }else{
@@ -13,7 +14,7 @@ class CreateSlugController{
 
         try{
             const createShorttyService = new CreateShorttyService();
-            const slug = await createShorttyService.execute(url);
+            const slug = await createShorttyService.execute(url, slugReceived);
 
             console.log("slug to retreive: " + slug);
 
