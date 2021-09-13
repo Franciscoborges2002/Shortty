@@ -1,4 +1,4 @@
-const slugSchema = require("../Schemas/slugSchema");
+const slugSchema = require("../database/Schemas/slugSchema");
 const AddViewsToPageService = require("../Services/AddViewsToPageService");
 
 const addViewsToPageService = new AddViewsToPageService();

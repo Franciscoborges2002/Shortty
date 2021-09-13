@@ -1,4 +1,4 @@
-const slugSchema = require("../Schemas/slugSchema");
+const slugSchema = require("../database/Schemas/slugSchema");
 
 class AddViewsToPageService{
     async execute(slugToRedirect){

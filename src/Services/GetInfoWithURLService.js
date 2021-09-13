@@ -1,4 +1,4 @@
-const slugSchema = require('../Schemas/slugSchema')//Compile into a model
+const slugSchema = require('../database/Schemas/slugSchema')//Compile into a model
 
 class GetInfoWithURLService{
     async execute(urlInfo){
