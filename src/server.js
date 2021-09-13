@@ -1,8 +1,6 @@
 var express = require('express');
 
 var db = require('./db')
-
-
 var router = require('./routes');
 
 var PORT = 5555;
