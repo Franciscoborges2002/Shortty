@@ -5,15 +5,23 @@
 </h4>
 
 ## What is shortty?
-Long story short shortty is a URL shortener.
+Long story short, shortty is a URL shortener.
 
-## :star: Features
-
+## :star: Global Features
+- [x] Create a shortenned URL;
+- [ ] Delete a shortened url;
   
 ## 🛣️ Roadmap
 - [ ] Finish the Api;
 - [ ] Make a basic site;
-- Finish the v1.0;
+- [ ] Finish the v1.0;
+
+## :star: Features v1.0 Backend
+- [x] Create a shortenned URL;
+- [x] Get info from an url;
+- [x] Urls shortened redirection;
+- [ ] Get all the info from the urls;
+- [ ] Delete a shortened url;
 
 ## :rocket: Technologies used
 
