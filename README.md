@@ -9,7 +9,7 @@
 ## What is shortty?
 Long story short, shortty is a URL shortener.
 
-## :star: Global Features
+## 🌎 Global Features
 - [x] Create a shortenned URL;
 - [ ] Delete a shortened url;
   
@@ -32,6 +32,17 @@ To make this wonderful application i used:
 - [Express](https://expressjs.com)
 - [Nodemon](https://www.npmjs.com/package/nodemon)
 - [Mongoose](https://mongoosejs.com/)
+
+## 🔗 Links
+
+In this section i will give some links to the things i used to make the project.
+- [Video to get to know the Rest API](https://youtu.be/vjf774RKrLc)
+- [Express Docs](https://expressjs.com/en/4x/api.html)
+- [Video to get started with mongoose](https://youtu.be/bxsemcrY4gQ)
+- [The mongoose Docs ofc](https://mongoosejs.com/docs/api.html)
+
+
+- [Figma of the project](https://www.figma.com/file/5G57p1jxygvVJwX7NJR4KA/Shortty?node-id=0%3A1)
 
 ## :memo: License
 
