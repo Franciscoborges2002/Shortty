@@ -3,15 +3,15 @@ const slugSchema = require('../database/Schemas/slugSchema')//Compile into a mod
 class GetInfoWithURLService{
     async execute(urlInfo){
         try{
-            var urlDB = slugSchema.findOne({ url : urlInfo })
+            var urlDB = slugSchema.findOne({ url : urlInfo });
 
             if(urlDB == ""){
-                return false
+                return false;
             }else{
                 return urlDB;
             }
         }catch(err){
-            console.log("[ERROR WHILE TRYING TO GET URL FROM DB {GetInfoURL}]: " + err);
+            console.log("[ERROR] While trying to get the url from the DB\n - : " + err);
             return err;
         }
     }

@@ -1,4 +1,5 @@
 var GetInfoWithURLService = require('../Services/GetInfoWithURLService')
+
 var getInfoWithURLService = new GetInfoWithURLService();
 
 class GetInfoController{
