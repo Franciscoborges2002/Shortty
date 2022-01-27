@@ -4,10 +4,11 @@ class GetAllSlugsService{
     async execute(){
         try{
             slugSchema.find({}).then(function (DBData){//Make a query for all slugs
-                console.log(DBData);
+                //console.log(DBData)
                 return DBData;//Return the data
             }).catch((err)=>{
-                console.log("[ERROR] While compiling all slugs to show\n - " + err);
+                console.log("[ERROR]: "+ err)
+                return err;
             })
         }catch(err){
             console.log("[ERROR]: Error trying to get all the slugs from DB.\n - " + err);

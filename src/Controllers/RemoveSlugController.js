@@ -8,8 +8,13 @@ class RemoveSlugController{
 
         try{
             removeSlugService.execute(slug).then(
-                ()=>{
-                console.log("Eliminado")
+                (result)=>{
+                    if(result){
+                        res.status(200).json({message: `${result}`})
+                    }else{
+                        res.status(400).json({message: 'Não existe o slug especificado'})
+                    }
+                
             });
         }catch(err){
             console.log("[ERROR] " + err)

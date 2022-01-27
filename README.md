@@ -11,10 +11,11 @@ Long story short, shortty is a URL shortener.
 
 ## 🌎 Global Features
 - [x] Create a shortenned URL;
-- [ ] Delete a shortened url;
+- [x] Delete a shortened url;
+- [ ] Add admin functions;
   
 ## 🛣️ Roadmap
-- [ ] Finish the Api;
+- [ ] Finish the basic API;
 - [ ] Make a basic site;
 - [ ] Finish the v1.0;
 
@@ -23,7 +24,7 @@ Long story short, shortty is a URL shortener.
 - [x] Get info from an url;
 - [x] Urls shortened redirection;
 - [ ] Get all the info from the urls;
-- [ ] Delete a shortened url;
+- [x] Delete a shortened url;
 
 ## :rocket: Technologies used
 
@@ -40,6 +41,8 @@ In this section i will give some links to the things i used to make the project.
 - [Express Docs](https://expressjs.com/en/4x/api.html)
 - [Video to get started with mongoose](https://youtu.be/bxsemcrY4gQ)
 - [The mongoose Docs ofc](https://mongoosejs.com/docs/api.html)
+- [Undefined handling](https://dmitripavlutin.com/7-tips-to-handle-undefined-in-javascript/)
+- [Litle introdution to Promises](https://www.geeksforgeeks.org/javascript-promises/)
 
 
 - [Figma of the project](https://www.figma.com/file/5G57p1jxygvVJwX7NJR4KA/Shortty?node-id=0%3A1)

@@ -11,10 +11,13 @@ class RemoveSlugService{
                         return false;
                     }else{//If exists
                         console.log("Existe o slug")
-                        slugSchema.findByIdAndDelete({slug : slug2Remove},).then((err, doc, res)=>{
-                            console.log(doc);
-                            console.log(res);
+
+                        slugSchema.findOneAndDelete({slug : slug2Remove}).catch((err)=>{
+                            console.log("[ERRO]: " + err)
+                            return err;
                         })
+                        return true;
+                        
                     }
         }catch(err){
 
