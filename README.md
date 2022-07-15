@@ -1,6 +1,6 @@
 <h4 align="center">
 
- ![logo of shortyy](https://i.imgur.com/xcjutXp.png)
+<img src="./Images/shorttyLogo.png"/>
  <b>URLs have never been so shortty</b>
  
  ![alt release](https://img.shields.io/github/v/release/jeferson-sb/be-the-hero?style=flat-square)

@@ -1,6 +1,6 @@
 class HomeController{
     async handle(req, res){
-        res.render("index")
+        res.render("pages/index")
     }
 }
 
